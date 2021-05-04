@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -20,9 +21,6 @@ class Post(db.Model):
     subtitle = db.Column(db.String(50))
     author = db.Column(db.String(20))
     content = db.Column(db.Text)
-
-    '''def __repr__(self):
-        return '<Role %r %r %r>' % self.title, self.subtitle, self.author'''
 
 class PostForm(FlaskForm):
     title = StringField('Type in the tile', validators=[DataRequired()])
@@ -70,25 +68,3 @@ def show():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
-    
-    
-    '''if request.method == 'GET':
-        pass
-
-    if request.method == 'POST':
-        title = request.form.get('title')
-        subtitle = request.form.get('subtitle')
-        author = request.form.get('author')
-        content = request.form.get('content')
-
-        title = request.postform.get('title')
-        subtitle = request.postform.get('subtitle')
-        author = request.postform.get('author')
-        content = request.postform.get('content')
-        
-        db.session.add([title, subtitle, author, content])
-        db.session.commit()'''
-
-
-        #return render_template('show.html',title= title, subtitle=subtitle, author=author, content=content)

@@ -1,3 +1,5 @@
+<div class="idk" style="background-color: black;">
+
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
@@ -5,15 +7,17 @@
 
 {% block page_content%} 
 <div class="page-header">
-    <h1>Hello !</h1>
-    <p>Pleased to meet you!</p>
+    <h1>All uploads can be seen here </h1>
 </div>
 
 {% for n in sh_posts %}
-
-<p>Title:{{n.title | safe}}  Subtitle:{{n.subtitle | safe}}  Author:{{n.author | safe}}  Content:{{n.content | safe}} </p>
+<h2> {{n.title| safe}} <br> <i style="font-size: large;"> {{n.subtitle| safe}} </i> </h2>
+<p> {{n.content| safe}} </p>
+<br>
+<p>Written by {{n.author| safe}} </p>
 <hr>
 
 {% endfor %}
 
 {% endblock %}
+</div>

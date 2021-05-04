@@ -1,3 +1,5 @@
+<div class="idk" style="background-color: black; height: 100%;">
+
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
@@ -5,10 +7,12 @@
 
 {% block page_content%} 
 <div class="page-header">
-    <h1>Hello !</h1>
+    <h1>Hello </h1>
     <p>Please fill in the form below to create a blog post.</p>
 </div>
-   
+    
 {{ wtf.quick_form(form) }}
 
 {% endblock %}
+
+</div>
